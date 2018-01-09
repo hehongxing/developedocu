@@ -39,11 +39,11 @@ privateString signTime;        //签署时间
 
 ##### 4.1 设置应用帐号 :setAccount
 
-   功能简介: 设置应用帐号。
+**功能简介**: 设置应用帐号。
 
-   原型: public void setAccount\(String appId, String appSecret\)
+**原型**: public void setAccount\(String appId, String appSecret\)
 
-   参数说明:
+**参数说明**:![](/assets/5.png)
 
 ##### 4.2 设置合同模板数据 :setTemplate
 
