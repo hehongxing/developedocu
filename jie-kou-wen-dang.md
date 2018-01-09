@@ -21,19 +21,15 @@
 
 **签署对象属性:**
 
-`privateString signSn;          //签署唯一编号(人人法服务器生成)`
-
-`privateString businessNum;     //签署唯一业务编号(用户服务器生成)`
-
-`privatebyte[]signedPdf;        //签署完成后的 pdf 文件`
-
-`privateint state;              //签署状态`
-
-`privateStringqrcode;           //签署二维码数据`
-
-`privateString creatTime;       //签署创建时间`
-
-`privateString signTime;        //签署时间`
+```
+privateString signSn;          //签署唯一编号(人人法服务器生成)
+privateString businessNum;     //签署唯一业务编号(用户服务器生成)
+privatebyte[]signedPdf;        //签署完成后的 pdf 文件
+privateint state;              //签署状态
+privateStringqrcode;           //签署二维码数据
+privateString creatTime;       //签署创建时间
+privateString signTime;        //签署时间
+```
 
 #### 3.客户端签署接口服务类:ElecSignService
 
