@@ -2,8 +2,9 @@
 
 #### 1.客户端消息类 :ClientMessage
 
-      调用相关接口后, 对应人人法响应的数据均封装在此消息类中, 包括响应状态码,响应提示信息。  
- **     消息类属性:**
+     调用相关接口后, 对应人人法响应的数据均封装在此消息类中, 包括响应状态码,响应提示信息。  
+
+**     消息类属性:**
 
 ```
   private String statusCode;         //返回状态码
@@ -11,7 +12,7 @@
   private String reqJsonBody;        //请求源数据
   private String respJsonBody;       //响应源数据
   private Sign sign;                 //客户端签名对象
-  private List<Sign> signList;       //客户端签名对象列表    
+  private List<Sign> signList;       //客户端签名对象列表
 ```
 
 #### 2. 客户端签署对象:Sign
