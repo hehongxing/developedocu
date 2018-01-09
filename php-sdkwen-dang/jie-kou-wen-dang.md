@@ -259,8 +259,6 @@ array("statusCode"=>"200",                          //响应状态码
                  "signedTime"=>""))                 //签署完成时间
 ```
 
-
-
 ##### 5.6.2 基于文件
 
 支持pdf,doc,docx,html格式
