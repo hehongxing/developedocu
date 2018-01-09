@@ -10,11 +10,7 @@
 
 \(3\)设置企业签章---基于证书:setSealsOnCert\(参考3.2.4.4节\)
 
-                   ---未申请证书:setSealsOnEvent\(参考3.2.4.5节\) 
+\(4\)设置个人签字:setSignatures\(参考3.2.4.6节\)  ---如果没有个人签字不需要设置
 
-\(4\)设置个人签字:setSignatures\(参考3.2.4.6节\)
-
-                     ---如果没有个人签字不需要设置
-
- \(5\)完成签署 :signContractByFile\(参考3.2.4.7节\)
+\(5\)完成签署 :signContractByFile\(参考3.2.4.7节\)
 
