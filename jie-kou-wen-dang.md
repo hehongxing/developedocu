@@ -39,7 +39,11 @@ privateString signTime;        //签署时间
 
 包含电子签署相关的所有接口,即3.2.4, 3.2.5, 3.2.6 的所有接口
 
-##### **3.1 初始化:**`new ElecSignService(String rrlServer, int port)`
+##### **3.1 初始化:**
+
+```java
+new ElecSignService(String rrlServer, int port)
+```
 
 **参数说明:**
 
@@ -56,7 +60,11 @@ privateString signTime;        //签署时间
 
 **功能简介**: 设置应用帐号。
 
-**原型**:`public void setAccount(String appId, String appSecret)`
+**原型**:
+
+```java
+public void setAccount(String appId, String appSecret)
+```
 
 **参数说明**:
 
@@ -71,7 +79,11 @@ privateString signTime;        //签署时间
 
 **功能简介**: 设置合同模板数据。
 
-**原型: **`public voidsetTemplate(String templateSn, String[]answers,boolean underline, Map<Integer, String[]> addTableContent)`
+**原型: **
+
+```java
+public void setTemplate(String templateSn, String[]answers,boolean underline, Map<Integer, String[]> addTableContent)
+```
 
 **参数说明:**
 
@@ -96,7 +108,11 @@ boolean underline=false;
 
 **功能简介: **设置此次签署相关数据。
 
-**原型: **`public void setSignData(String businessNum,int signType, String notifyUrl)`
+**原型: **
+
+```java
+public void setSignData(String businessNum,int signType, String notifyUrl)
+```
 
 **参数说明:**
 
@@ -120,7 +136,11 @@ String notifyUrl="https://www.renrenlaw.com/sign/notify";
 
 **功能简介:**设置企业签章数据,已经申请了企业签章证书。
 
-**原型: **`public void setSealsOnCert(List<Map<String,Object>> sealList)`
+**原型: **
+
+```java
+public void setSealsOnCert(List<Map<String,Object>> sealList)
+```
 
 **参数说明:**
 
@@ -177,7 +197,11 @@ sealList.add(certSeal);
 
 **功能简介:** 设置个人签字数据。
 
-**原型:** `public void setSignatures(List<Map<String,Object>> signatureList)`
+**原型:** 
+
+```java
+public void setSignatures(List<Map<String,Object>> signatureList)
+```
 
 **参数说明:**
 
@@ -240,7 +264,11 @@ signatureList.add(signatureMap);
 
 **功能简介:** 电子签署接口,基于模板完成签署。
 
-**原型: **`public ClientMessage signContractByTemplate(String pdfSavePath)`
+**原型: **
+
+```java
+public ClientMessage signContractByTemplate(String pdfSavePath)
+```
 
 **参数说明:**
 
@@ -254,7 +282,11 @@ signatureList.add(signatureMap);
 
 **功能简介: **电子签署接口,基于文件完成签署。
 
-**原型: **`public ClientMessage signContractByFile(String filePath ,String pdfSavePath)`
+**原型: **
+
+```java
+public ClientMessage signContractByFile(String filePath ,String pdfSavePath)
+```
 
 **参数说明:**
 
@@ -269,7 +301,11 @@ signatureList.add(signatureMap);
 
 **功能简介:** 电子签署接口,基于生成的二维码,用户利用移动设备扫码进入完成签署。
 
-**原型:**`public ClientMessage getSignatureQRcode()`
+**原型:**
+
+```java
+public ClientMessage getSignatureQRcode()
+```
 
 **返回数据:**
 
@@ -283,11 +319,17 @@ signatureList.add(signatureMap);
 
 二维码有效期为半个小时,超过半小时没有完成签署需要重新获取
 
+##### 
+
 ##### 4.9 完成签署 —重新获取签署二维码:getSignatureQRcodeAgain
 
 **功能简介:** 电子签署接口,基于生成的二维码,用户利用移动设备扫码进入完成签署。
 
-**原型:**`public ClientMessageget SignatureQRcodeAgain(StringsignSn)`
+**原型:**
+
+```java
+public ClientMessageget SignatureQRcodeAgain(StringsignSn)
+```
 
 **参数说明:**
 
@@ -303,7 +345,11 @@ signatureList.add(signatureMap);
 
 **功能简介:** 查询合同的签署状态。
 
-**原型:**`public ClientMessage getSignState(String signSn)`
+**原型:**
+
+```java
+public ClientMessage getSignState(String signSn)
+```
 
 **参数说明:**
 
@@ -317,7 +363,11 @@ signatureList.add(signatureMap);
 
 **功能简介: **查询单个合同。
 
-**原型:**`public ClientMessage getSingleContract(String signSn)`
+**原型:**
+
+```java
+public ClientMessage getSingleContract(String signSn)
+```
 
 **参数说明:**
 
@@ -333,7 +383,11 @@ signatureList.add(signatureMap);
 
 **功能简介: **签署前,发送手机验证码,调用签署接口完成签署时必需传入此验证码。
 
-**原型:**`public ClientMessage sendSignVerifyCode(List<Map<String,Object>>phoneAndCodeList)`
+**原型:**
+
+```java
+public ClientMessage sendSignVerifyCode(List<Map<String,Object>> phoneAndCodeList)
+```
 
 **参数说明:**
 
