@@ -6,12 +6,12 @@ PDF 签章工具类构造方法,该工具类包含所有电子签署相关接口
 
 #### 1.1工具类原型
 
-`public ElecSignService($serverUrl,$port=443)`
+       `public ElecSignService($serverUrl,$port=443)`
 
 #### 1.2参数说明
 
-| 参数 | 类型 | 约束 | 说明 |
-| :--- | :--- | :--- | :--- |
+| **参数** | **类型** | **约束** | **说明** |
+| :---: | :---: | :---: | :--- |
 | $ serverUrl | String | 必选 | 人人法电子签署 ip |
 | $ port | String | 可选 | 人人法电子签署端口 |
 
@@ -19,122 +19,39 @@ PDF 签章工具类构造方法,该工具类包含所有电子签署相关接口
 
 #### 2.1接口原型
 
-`public function setAccount($appId,$appSecret)`
+       `public function setAccount($appId,$appSecret)`
 
 #### 2.2参数说明
 
-| 参数 | 类型 | 约束 | 说明 |
-| :--- | :--- | :--- | :--- |
+| **参数** | **类型** | **约束** | **说明** |
+| :---: | :---: | :---: | :--- |
 | $appId | String | 必选 | 应用 id |
 | $appSecret | String | 必选 | 应用密钥 |
 
-### 3.查询所有自定义模板
+### 3**.查询单个签署文件信息**
 
 #### 3.1接口原型
 
-`public function getCustomTemplates()`
+      `public function querySingleContract($signSn)`
 
-#### 3.2返回结果
+#### 3.2参数说明
 
-`array("statusCode"=>"200",                           //响应状态码`
-
-`"statusMsg"=>"success",                              //状态说明`
-
-`"templateData"=>                                          //模板信息，仅在statusCode为200时有`
-
-`array("templateSn"=>"",                                 //模板编号`
-
-`"templateName"=>""),                                    //模板名称`
-
-`array("templateSn"=>"",`
-
-`"templateName"=>""),`
-
-`......)`
-
-### 4.查询所有企业签章信息
-
-#### 4.1接口原型
-
-`public function getCompanySeals()`
-
-#### 4.2返回结果
-
-`array("statusCode"=>"200",//响应状态码`
-
-```
-"statusMsg"=>"success",//状态说明
-```
-
-`"sealData"=>//模板信息,仅在 statusCode为200时有`
-
-`array("sealSn"=>"",//签章编号`
-
-`"description"=>"",//签章说明`
-
-`"createdTime"=>""),//创建时间`
-
-`array("sealSn"=>"",`
-
-`"description"=>"",`
-
-`"createdTime"=>""),`
-
-`……)`
-
-### **5.查询所有签署文件信息**
-
-#### 5.1**接口原型**
-
-`public function queryAllContract()`
-
-#### 5.2** 返回结果**
-
-`array("statusCode"=>"200",            //响应状态码`
-
-`"statusMsg"=>"success",               //状态说明`
-
-`"signData"=>                          //签署信息,仅在 statusCode为200时有`
-
-`array("signSn"=>"",                   //签署文件编号`
-
-`"signName"=>"",                       //签署文件名称`
-
-`"signedTime"=>"")                     //签署完成时间`
-
-`array("signSn"=>"",`
-
-`"signName"=>"",`
-
-`"signedTime"=>"")  ,`
-
-`……)`
-
-### **6.查询单个签署文件信息**
-
-#### 6.1接口原型
-
-`public function querySingleContract($signSn)`
-
-#### 6.2参数说明
-
-| 参数 | 类型 | 约束 | 说明 |
-| :--- | :--- | :--- | :--- |
+| **参数** | **类型** | **约束** | **说明** |
+| :---: | :---: | :---: | :--- |
 | $signSn | String | 必选 | 文件编号 |
 
-#### 6.3返回结果
+#### 3.3返回结果
 
-`array("statusCode"=>"200",        //响应状态码`
+```
+array("statusCode"=>"200",                       //响应状态码
+      "statusMsg"=>"success",                    //状态说明
+      "signData"=>                               //签署信息,仅在 statusCode为200时有
+           array("signSn"=>"",                   //签署文件编号
+                 "signedPdf"=>"",                //签署完成文件
+                 "signedTime"=>""))              //签署完成时间
+```
 
-`"statusMsg"=>"success",          //状态说明`
 
-`"signData"=>                     //签署信息,仅在 statusCode为200时有`
-
-`array("signSn"=>"",              //签署文件编号`
-
-`"signName"=>"",                  //签署文件名称`
-
-`"signedTime"=>""))              //签署完成时间`
 
 ### **7.根据手机号查询所有签署文件信息**
 
