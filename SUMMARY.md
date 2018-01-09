@@ -16,9 +16,9 @@
 * [PHP SDK文档](php-sdkwen-dang.md)
   * [PHP SDK集成环境](php-sdkwen-dang/php-sdkji-cheng-huan-jing.md)
   * [接口文档](php-sdkwen-dang/jie-kou-wen-dang.md)
-* [签署方式说明](qian-shu-fang-shi-shuo-ming.md)
-  * [基于模板](qian-shu-fang-shi-shuo-ming/ji-yu-mo-ban.md)
-  * [基于文件](qian-shu-fang-shi-shuo-ming/ji-yu-wen-jian.md)
-  * [基于二维码](qian-shu-fang-shi-shuo-ming/ji-yu-er-wei-ma.md)
+  * [签署方式说明](qian-shu-fang-shi-shuo-ming.md)
+    * [基于模板](qian-shu-fang-shi-shuo-ming/ji-yu-mo-ban.md)
+    * [基于文件](qian-shu-fang-shi-shuo-ming/ji-yu-wen-jian.md)
+    * [基于二维码](qian-shu-fang-shi-shuo-ming/ji-yu-er-wei-ma.md)
 * [错误码说明](cuo-wu-ma-shuo-ming.md)
 
