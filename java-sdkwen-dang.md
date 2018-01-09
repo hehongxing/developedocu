@@ -6,5 +6,5 @@
 
 **字符编码        **UTF-8
 
-**所需 jar 包      **rrl\_signClient.1.0.5.jar, json-lib-2.2.2-jdk15.jar,commons-beanutils.jar, commons-collections-3.1.jar, commons-lang.jar, commons-logging.jar, ezmorph-1.0.6.jar
+**所需 jar 包      **rrl-esign-sdk.1.2.2.jar, json-lib-2.2.2-jdk15.jar,commons-beanutils.jar, commons-collections-3.1.jar, commons-lang.jar, commons-logging.jar, ezmorph-1.0.6.jar
 
