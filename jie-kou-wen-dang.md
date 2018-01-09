@@ -35,6 +35,10 @@ privateString signTime;        //签署时间
 
 包含电子签署相关的所有接口,即3.2.4, 3.2.5, 3.2.6 的所有接口
 
+3.1 初始化:new ElecSignService\(String rrlServer, int port\)
+
+参数说明:
+
 #### 4.客户端签署相关接口
 
 ##### 4.1 设置应用帐号 :setAccount
