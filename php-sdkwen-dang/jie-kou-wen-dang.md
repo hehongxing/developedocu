@@ -6,7 +6,9 @@ PDF 签章工具类构造方法,该工具类包含所有电子签署相关接口
 
 #### 1.1工具类原型
 
-       `public ElecSignService($serverUrl,$port=443)`
+```php
+public ElecSignService($serverUrl,$port=443)
+```
 
 #### 1.2参数说明
 
@@ -19,7 +21,9 @@ PDF 签章工具类构造方法,该工具类包含所有电子签署相关接口
 
 #### 2.1接口原型
 
-       `public function setAccount($appId,$appSecret)`
+```php
+public function setAccount($appId,$appSecret)
+```
 
 #### 2.2参数说明
 
@@ -32,7 +36,9 @@ PDF 签章工具类构造方法,该工具类包含所有电子签署相关接口
 
 #### 3.1接口原型
 
-      `public function querySingleContract($signSn)`
+```php
+public function querySingleContract($signSn)
+```
 
 #### 3.2参数说明
 
@@ -55,8 +61,8 @@ array("statusCode"=>"200",                       //响应状态码
 
 #### 4.1接口原型
 
-```
-  public function querySignState($signSn)
+```php
+public function querySignState($signSn)
 ```
 
 #### 4.2参数说明
@@ -81,25 +87,21 @@ array("statusCode"=>"200",                       //响应状态码
 
 ##### 5.1.1 企业签章
 
-```
     1.企业已经申请签章证书完成签署，需提供企业签章编号sealSn，可以设置多个;
-
-    2.企业未申请签章证书完成签署，需提供企业社会信用统一代码creditCode，人人法会根据企业名称生成签章完成签署，可以设置多个;
-```
 
 ##### 5.1.2 个人签字
 
-```
     1.手写签字，需要签署人在移动设备上进行手写签字从而完成签署，仅支持单个签字;
 
     2.默认签字，签署人无需任何操作 ，人人法根据签署人姓名生成默认签字从而完成签署，可以设置多个。
-```
 
 #### 5**.2 设置模板数据**
 
 ##### 5.2.1接口原型
 
-`public function setTemplate($templateSn,$answer,$underline=false)`
+```php
+public function setTemplate($templateSn,$answer,$underline=false)
+```
 
 ##### 5.2.2 参数说明
 
