@@ -7,12 +7,12 @@
 **消息类属性:**
 
 ```
-  private String statusCode;         //返回状态码
-  private String statusInfo;         //返回状态信息
-  private String reqJsonBody;        //请求源数据
-  private String respJsonBody;       //响应源数据
-  private Sign sign;                 //客户端签名对象
-  private List<Sign> signList;       //客户端签名对象列表
+private String statusCode;         //返回状态码
+private String statusInfo;         //返回状态信息
+private String reqJsonBody;        //请求源数据
+private String respJsonBody;       //响应源数据
+private Sign sign;                 //客户端签名对象
+private List<Sign> signList;       //客户端签名对象列表
 ```
 
 #### 2. 客户端签署对象:Sign
