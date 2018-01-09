@@ -37,7 +37,9 @@ privateString signTime;        //签署时间
 
 ##### **3.1 初始化:new ElecSignService\(String rrlServer, int port\)**
 
-参数说明:
+**参数说明:**
+
+           ![](/assets/6.png)
 
 #### 4.客户端签署相关接口
 
