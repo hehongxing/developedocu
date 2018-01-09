@@ -47,11 +47,32 @@ array("statusCode"=>"200",                       //响应状态码
       "statusMsg"=>"success",                    //状态说明
       "signData"=>                               //签署信息,仅在 statusCode为200时有
            array("signSn"=>"",                   //签署文件编号
-                 "signedPdf"=>"",                //签署完成文件
+                 "signedPdf"=>"",                //签署完成文件(base64编码)
                  "signedTime"=>""))              //签署完成时间
 ```
 
+### 4**.查询文件签署状态**
 
+#### 3.1接口原型
+
+      `public function querySingleContract($signSn)`
+
+#### 3.2参数说明
+
+| **参数** | **类型** | **约束** | **说明** |
+| :---: | :---: | :---: | :--- |
+| $signSn | String | 必选 | 文件编号 |
+
+#### 3.3返回结果
+
+```
+array("statusCode"=>"200",                       //响应状态码
+      "statusMsg"=>"success",                    //状态说明
+      "signData"=>                               //签署信息,仅在 statusCode为200时有
+           array("signSn"=>"",                   //签署文件编号
+                 "signedPdf"=>"",                //签署完成文件
+                 "signedTime"=>""))              //签署完成时间
+```
 
 ### **7.根据手机号查询所有签署文件信息**
 
