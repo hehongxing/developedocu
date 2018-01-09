@@ -133,7 +133,7 @@ String notifyUrl="https://www.renrenlaw.com/sign/notify";
 
 ```
 String sealSn="CS17021416183335921148158A2BD598";
-List<Map<String,Object>> certSealList=new ArrayList<Map<String,Object>>();
+List<Map<String,Object>> sealList=new ArrayList<Map<String,Object>>();
 Map<String,Object> certSeal=new TreeMap<String,Object>();
 certSeal.put("companyName","北京人人法科技有限公司");
 certSeal.put("sealSn", sealSn);
@@ -156,7 +156,7 @@ certSeal.put("heightMoveSize","100");
 certSeal.put("keywordType","1");
 certSeal.put("searchOrder","2");
 certSeal.put("coverType","2");
-certSealList.add(certSeal);
+sealList.add(certSeal);
 ```
 
 ##### 4.5 设置个人签字:setSignatures
@@ -168,52 +168,57 @@ certSealList.add(certSeal);
 **参数说明:**
 
 | 参数 | 类型 | 约束 | 说明 |
-| :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :--- |
 | phone | String | 可选 | 签署人手机号,当 signType=4即需要手写签名时必需提供。 |
 | name | String | 必选 | 签署人真实姓名。 |
 | idcard | String | 可选 | 签署人身份证号,建议提供。 |
 | keyword | String | 必选 | 个人签名关键字 合同中必需包含此关键字,,同时关键字默认为合 同文档中倒数搜索到的第一个。 |
+| isBorder | String | 可选 | true 或 false, 默认为 false, 由人人法生成的签字图片是否加边框 |
 | verifyCode | String | 可选 | 手机验证码 如果加入此参数,必需在此之前调用发送手机验证 码接口给该签署人发送验证码,否则无法完成签署,仅当 signType=2,3 时有用. |
 | isVerifyCode | String | 可选 | 为 ture 或 false,默认为 true 签名过程中是否给签署人发送手机验证码进行验证,仅当 signType=4 即手写签名时有用 |
 
 | sealWidth | String | 可选 | 个人签名的宽度,默认为 0,0 为图片实际宽度大小 |
-| :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :--- |
 | sealHeight | String | 可选 | 个人签名的高度,默认为 0,0 为图片实际高度大小 |
 | moveSize | String | 可选 | 个人签名相对于初始位置的左右偏移大小,正数向 左偏移,负数向右偏移 |
 | heightMoveSize | String | 可选 | 个人签名相对于初始位置的上下偏移大小,正数向上偏移,负数向下偏移 |
 | keywordType | String | 可选 | 合同文档中关键字匹配类型,0 为所有关键字,1 为 单个关键字,默认为所有关键字 |
 | searchOrder | String | 可选 | 合同文档中关键字的搜索顺序,默认倒序,1:正序、 2:倒序 |
 | coverType | String | 可选 | 合同文档中个人签名覆盖类型,默认居右,1:重叠、 2:居下、3:居右 |
+| signature | String | 可选 | 签字图片,base64 编码 |
+| position | Map | 可选 | 签章位置, 包含 posX\(X 轴坐标点\),posY\(Y 轴坐标点\),pageNum\(签字位置所在文件页码\) |
+
+**说明**:参数 keyword 和 position 两者二选一,两个参数有且存在一个
 
 **参数示例:**
 
-`List<Map<String,Object>> signatureList=new ArrayList<Map<String,Object>>();`
+```
+List<Map<String,Object>> signatureList=new ArrayList<Map<String,Object>>();
+Map<String,Object> signatureMap=new TreeMap<String,Object>();
+signatureMap.put("name","张三");
+signatureMap.put("idcard","421122188809298288383");
+signatureMap.put("phone","17600000000");
+signatureMap.put("keyword","甲方(出借人)签字");
 
-`Map<String,Object> signatureMap=new TreeMap<String,Object>();`
+// signatureMap.put("signature","cv9dvfdvfdv8df98v9d");
 
-`signatureMap.put("name","张三");`
+// List<Map<String,Object>> positionList=new ArrayList<Map<String,Object>>();
+// Map<String,Object> positionMap=new TreeMap<String,Object>();
+// positionMap.put("posX", 150);
+// positionMap.put("posY", 500);
+// positionMap.put("pageNum", 1);
+// positionList.add(positionMap);
+// certSeal.put("position", positionList);
 
-`signatureMap.put("idcard","421122188809298288383");`
-
-`signatureMap.put("phone","17600000000");`
-
-`signatureMap.put("keyword","甲方(出借人)签字");`
-
-`signatureMap.put("sealWidth","150");`
-
-`signatureMap.put("sealHeight","30");`
-
-`signatureMap.put("moveSize","-450");`
-
-`signatureMap.put("heightMoveSize","70");`
-
-`signatureMap.put("keywordType","1");`
-
-`signatureMap.put("searchOrder","1");`
-
-`signatureMap.put("coverType","1");`
-
-`signatureList.add(signatureMap);`
+signatureMap.put("sealWidth","150");
+signatureMap.put("sealHeight","30");
+signatureMap.put("moveSize","-450");
+signatureMap.put("heightMoveSize","70");
+signatureMap.put("keywordType","1");
+signatureMap.put("searchOrder","1");
+signatureMap.put("coverType","1");
+signatureList.add(signatureMap);
+```
 
 ##### 4.6 完成签署 — 基于模板:signContractByTemplate
 
