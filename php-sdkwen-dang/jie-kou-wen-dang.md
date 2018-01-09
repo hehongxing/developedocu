@@ -167,14 +167,19 @@ public function setSealsOnCert($sealArray)
 | keywordType | String | 可选 | 合同文档中关键字匹配类型,0 为所有关键字,1 为单个关键字,默认为所有关键字 |
 | searchOrder | String | 可选 | 合同文档中关键字的搜索顺序,默认倒序,1:正序、2: 倒序 |
 | coverType | String | 可选 | 合同文档中企业印章覆盖类型,默认居右,1:重叠、2: 居下、3:居右 |
+| sealImg | String | 可选 | 签章图片,base64 编码 |
+| position | array | 可选 | 签章位置, 包含 posX\(X 轴坐标点\),posY\(Y 轴坐标点\),pageNum\(签章位置所在文件页码\) |
+
+##### 说明:参数 keyword 和 position 两者二选一,两个参数有且存在一个
 
 ##### 5.4.3参数示例
 
 ```
 $sealArray=array("sealSn"=>"CS8382983229328", //企业签章编号
                  "companyName"=>"中国xx科技有限公司",                   //公司名称
-                 "phone"=>"13200000000",                             //手机号
                  "keyword"=>"甲方盖章：",                              //签章关键字
+              // "position"=>array("posX"=>150,"posY"=>150,"pageNum"=>2),
+              // "sealImg"=>"8ds98s8fcdssvcds8",
                  "sealWidth"=>"120",                                 //印章图片宽度
                  "sealHeight"=>"120",                                //印章图片高度
                  "moveSize"=>"-50",                                  //印章图片左右偏移
@@ -205,6 +210,7 @@ public function setSignatures($signatureArray)
 | isVerifyCode | String | 可选 | 为 ture 或 false,默认为 true, 手写签名过程中是否给签署人发送手机验证码进行验证. 仅当 signType=4 即手写签名时有用 |
 | :---: | :---: | :---: | :--- |
 | keyword | String | 必选 | 签署关键字,个人签字将会位于此关键字后面,默认从 合同最后开始找到的第一个 |
+| isBorder | boolean | 可选 | true 或 false, 默认为 false, 由人人法生成的签字图片是否加边框 |
 | sealWidth | String | 可选 | 个人签名的宽度,默认为 0,0 为图片实际宽度大小 |
 | sealHeight | String | 可选 | 个人签名的高度,默认为 0,0 为图片实际高度大小 |
 | moveSize | String | 可选 | 个人签名相对于初始位置的左右偏移大小,正数向左偏移,负数向右偏移 |
@@ -212,6 +218,10 @@ public function setSignatures($signatureArray)
 | keywordType | String | 可选 | 合同文档中关键字匹配类型,0 为所有关键字,1 为单个 关键字,默认为所有关键字 |
 | searchOrder | String | 可选 | 合同文档中关键字的搜索顺序,默认倒序,1:正序、2:倒 序 |
 | coverType | String | 可选 | 合同文档中个人签名覆盖类型,默认居右,1:重叠、2: 居下、3:居右 |
+| signature | String | 可选 | 签字图片,base64 编码 |
+| position | array | 可选 | 签章位置, 包含 posX\(X 轴坐标点\),posY\(Y 轴坐标点\),pageNum\(签字位置所在文件页码\) |
+
+##### 说明:参数 keyword 和 position 两者二选一,两个参数有且存在一个
 
 ##### 5.5.3参数示例
 
@@ -220,6 +230,8 @@ $signatureArray=array("name"=>"张三",   //签署人姓名
                       "idcard"=>"4211228382838223",
                       "phone"=>"13200000000",                       //手机号
                       "keyword"=>"签字1：",                          //关键字
+               //     "signature"=>"ds98vf8dsfds9f8sd"
+               //     "position"=>array("posX"=>150,"posY"=>150,"pageNum"=>2),
                       "sealWidth"=>"150",                           //印章图片宽度
                       "sealHeight"=>"30",                           //印章图片高度
                       "moveSize"=>"-50",                            //印章图片左右偏移
@@ -294,7 +306,7 @@ array("statusCode"=>"200",                          //响应状态码
 
 仅限一个个人签字.
 
-在调用以上几个接口\(7.1~7.6\)完成相关参数设置之后，可以调用此接口获取个人进行签字的二维码数据，在个人用移动设备扫描二维码进行签名后，便完成了整个文件的签署.
+在调用以上几个接口\(5.1~5.6\)完成相关参数设置之后，可以调用此接口获取个人进行签字的二维码数据，在个人用移动设备扫描二维码进行签名后，便完成了整个文件的签署.
 
 二维码有效期为半个小时,超过这个时间后需要根据返回的编号signSn重新获取二维码数据.
 
