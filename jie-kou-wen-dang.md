@@ -39,7 +39,7 @@ privateString signTime;        //签署时间
 
 包含电子签署相关的所有接口,即3.2.4, 3.2.5, 3.2.6 的所有接口
 
-##### **3.1 初始化:`new ElecSignService(String rrlServer, int port)`**
+##### **3.1 初始化:**`new ElecSignService(String rrlServer, int port)`
 
 **参数说明:**
 
@@ -56,7 +56,7 @@ privateString signTime;        //签署时间
 
 **功能简介**: 设置应用帐号。
 
-**原型**:` public void setAccount(String appId, String appSecret)`
+**原型**:`public void setAccount(String appId, String appSecret)`
 
 **参数说明**:
 
@@ -282,8 +282,6 @@ signatureList.add(signatureMap);
      `<img src="data:image/png;base64,R0lGODlhAwADAIABAL" />`
 
 二维码有效期为半个小时,超过半小时没有完成签署需要重新获取
-
-
 
 ##### 4.9 完成签署 —重新获取签署二维码:getSignatureQRcodeAgain
 
