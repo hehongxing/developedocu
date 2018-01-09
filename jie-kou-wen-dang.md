@@ -5,19 +5,17 @@
 调用相关接口后, 对应人人法响应的数据均封装在此消息类中, 包括响应状态码,响应提示信息。  
 **消息类属性:**
 
-```
-privateString statusCode;         //返回状态码
-```
+      `private String statusCode;         //返回状态码`
 
-`privateString statusInfo;         //返回状态信息`
+      `private String statusInfo;         //返回状态信息`
 
-`privateString reqJsonBody;        //请求源数据`
+      `private String reqJsonBody;        //请求源数据`
 
-`privateString respJsonBody;       //响应源数据`
+  `private String respJsonBody;       //响应源数据`
 
-`privateSign sign;                 //客户端签名对象`
+`private Sign sign;                 //客户端签名对象`
 
-`privateList<Sign> signList;       //客户端签名对象列表`
+`private List<Sign> signList;       //客户端签名对象列表`
 
 #### 2. 客户端签署对象:Sign
 
