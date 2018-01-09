@@ -5,7 +5,9 @@
 调用相关接口后, 对应人人法响应的数据均封装在此消息类中, 包括响应状态码,响应提示信息。  
 **消息类属性:**
 
-`privateString statusCode;         //返回状态码`
+```
+privateString statusCode;         //返回状态码
+```
 
 `privateString statusInfo;         //返回状态信息`
 
