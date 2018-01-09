@@ -44,8 +44,6 @@ privateString signTime;        //签署时间
 | rrlServer | String | 必选 | 人人法电子签署服务器地址，默认为 www.renrenlaw.com |
 | port | int | 必选 | 人人法电子签署服务器端口，默认为 443 |
 
-![](/assets/6.png)
-
 #### 4.客户端签署相关接口
 
 ##### 4.1 设置应用帐号 :setAccount
