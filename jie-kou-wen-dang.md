@@ -76,11 +76,11 @@ privateString signTime;        //签署时间
 
 **参数示例:**
 
-`String templateSn= "CT17040611593771672859858E5BD29D";`
-
-`String[]answers= {"ZTTZ-10000703","2017 年 01 月 12 日","2017 年 03 月 12 日","张三"};`
-
-`boolean underline=false;`
+```
+String templateSn= "CT17040611593771672859858E5BD29D";
+String[]answers= {"ZTTZ-10000703","2017 年 01 月 12 日","2017 年 03 月 12 日","张三"};
+boolean underline=false;
+```
 
 ##### 4.3 设置签署数据 :setSignData
 
