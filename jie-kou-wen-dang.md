@@ -39,7 +39,7 @@ privateString signTime;        //签署时间
 
 **参数说明:**
 
-          
+![](/assets/6.png)
 
 #### 4.客户端签署相关接口
 
@@ -49,7 +49,9 @@ privateString signTime;        //签署时间
 
 **原型**: public void setAccount\(String appId, String appSecret\)
 
-**参数说明**:![](/assets/5.png)
+**参数说明**:
+
+![](/assets/7.png)
 
 ##### 4.2 设置合同模板数据 :setTemplate
 
