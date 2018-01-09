@@ -197,7 +197,7 @@ sealList.add(certSeal);
 
 **功能简介:** 设置个人签字数据。
 
-**原型:** 
+**原型:**
 
 ```java
 public void setSignatures(List<Map<String,Object>> signatureList)
