@@ -71,8 +71,8 @@ privateString signTime;        //签署时间
 | :---: | :---: | :---: | :--- |
 | templateSn | String | 必选 | 模板编号,用于人人法调用对应的合同模板。 |
 | answers | String\[\] | 可空 | 默认为 null,模板填充数据,这些数据会填充到对 应的合同模板中,从而生成相对应的合同。 |
-| underline | boolean | 必选 | 默认为 flase,生成的合同中, 未填充数据处是否保 留下划线 |
-| addTableContent | Map&lt;Integ er, String\[\]&gt; | 可空 | 默认为 null,表格填充数据 |
+| underline | boolean | 必选 | 默认为 flase,生成的合同中, 未填充数据处是否保留下划线 |
+| addTableContent | Map&lt;Integer, String\[\]&gt; | 可空 | 默认为 null,表格填充数据 |
 
 **参数示例:**
 
@@ -91,18 +91,18 @@ boolean underline=false;
 **参数说明:**
 
 | 参数 | 类型 | 约束 | 说明 |
-| :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :--- |
 | businessNum | String | 必选 | 签署唯一业务编号,由用户自己生成,合同签署完成后人人法会将此编号传回。 |
 | signType | int | 必选 | 签署类型, signType=1:仅有企业签章。 signType=2:仅有个人默认签名。 signType=3:企业签章加个人默认签名。 signType=4:企业签章加个人手写签名。 |
 | notifyUrl | String | 可空 | 签署完成后的回调地址,仅在 signType=4 时有效,即当signType=4 需要在移动设备上手签时必需提 供。 |
 
 **参数示例:**
 
-`String businessNum="JKHT20161111";`
-
-`int signType=3;`
-
-`String notifyUrl="https://www.renrenlaw.com/sign/notify";`
+```
+String businessNum="JKHT20161111";
+int signType=3;
+String notifyUrl="https://www.renrenlaw.com/sign/notify";
+```
 
 ##### 4.4 设置企业签章\(基于证书\):setSealsOnCert
 
@@ -113,7 +113,7 @@ boolean underline=false;
 **参数说明:**
 
 | 参数 | 类型 | 约束 | 说明 |
-| :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :--- |
 | companyName | String | 必选 | 签章企业名称。 |
 | sealSn | String | 必选 | 企业签章编号,仅在企业基于已经申请的签章证书进行签署时有效,人人法根据此编号调用对应的签章和证书。 |
 | keyword | String | 必选 | 企业签章关键字,合同中必需包含此关键字,同时关键字默认为合同文档中倒数搜索到的第一个。 |
@@ -124,36 +124,40 @@ boolean underline=false;
 | keywordType | String | 可选 | 合同文档中关键字匹配类型,0 为所有关键字,1 为 单个关键字,默认为所有关键字 |
 | searchOrder | String | 可选 | 合同文档中关键字的搜索顺序,默认倒序,1:正序、 2:倒序 |
 | coverType | String | 可选 | 合同文档中企业印章覆盖类型,默认居右,1:重叠、 2:居下、3:居右 |
+| sealImg | String | 可选 | 签章图片,base64 编码 |
+| position | Map | 可选 | 签章位置, 包含 posX\(X 轴坐标点\),posY\(Y 轴坐标点\),pageNum\(签章位置所在文件页码\) |
+
+**说明:**参数 keyword 和 position 两者二选一,两个参数有且存在一个
 
 **参数示例:**
 
-`String sealSn="CS17021416183335921148158A2BD598";`
+```
+String sealSn="CS17021416183335921148158A2BD598";
+List<Map<String,Object>> certSealList=new ArrayList<Map<String,Object>>();
+Map<String,Object> certSeal=new TreeMap<String,Object>();
+certSeal.put("companyName","北京人人法科技有限公司");
+certSeal.put("sealSn", sealSn);
+certSeal.put("keyword","丙方盖章:");
 
-`List<Map<String,Object>> certSealList=new ArrayList<Map<String,Object>>();`
+// certSeal.put("sealImg","dscvds9c8sdc87c8sdc7");
 
-`Map<String,Object> certSeal=new TreeMap<String,Object>();`
+// List<Map<String,Object>> positionList=new ArrayList<Map<String,Object>>();
+// Map<String,Object> positionMap=new TreeMap<String,Object>();
+// positionMap.put("posX", 150);
+// positionMap.put("posY", 500);
+// positionMap.put("pageNum", 1);
+// positionList.add(positionMap);
+// certSeal.put("position", positionList);
 
-`certSeal.put("companyName","北京人人法科技有限公司");`
-
-`certSeal.put("sealSn", sealSn);`
-
-`certSeal.put("keyword","丙方盖章:");`
-
-`certSeal.put("sealWidth","150");`
-
-`certSeal.put("sealHeight","150");`
-
-`certSeal.put("moveSize","-200");`
-
-`certSeal.put("heightMoveSize","100");`
-
-`certSeal.put("keywordType","1");`
-
-`certSeal.put("searchOrder","2");`
-
-`certSeal.put("coverType","2");`
-
-`certSealList.add(certSeal);`
+certSeal.put("sealWidth","150");
+certSeal.put("sealHeight","150");
+certSeal.put("moveSize","-200");
+certSeal.put("heightMoveSize","100");
+certSeal.put("keywordType","1");
+certSeal.put("searchOrder","2");
+certSeal.put("coverType","2");
+certSealList.add(certSeal);
+```
 
 ##### 4.5 设置个人签字:setSignatures
 
