@@ -33,17 +33,17 @@ privateString signTime;        //签署时间
 
 #### 3.客户端签署接口服务类:ElecSignService
 
-  包含电子签署相关的所有接口,即3.2.4, 3.2.5, 3.2.6 的所有接口
+包含电子签署相关的所有接口,即3.2.4, 3.2.5, 3.2.6 的所有接口
 
 #### 4.客户端签署相关接口
 
 ##### 4.1 设置应用帐号 :setAccount
 
-       功能简介: 设置应用帐号。
+   功能简介: 设置应用帐号。
 
-       原型: public void setAccount\(String appId, String appSecret\)
+   原型: public void setAccount\(String appId, String appSecret\)
 
-       参数说明:
+   参数说明:
 
 ##### 4.2 设置合同模板数据 :setTemplate
 
