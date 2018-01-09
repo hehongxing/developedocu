@@ -58,8 +58,6 @@ privateString signTime;        //签署时间
 | :--- | :--- | :--- | :--- |
 |  |  |  |  |
 
-![](/assets/7.png)
-
 ##### 4.2 设置合同模板数据 :setTemplate
 
 **功能简介**: 设置合同模板数据。
