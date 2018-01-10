@@ -5,7 +5,6 @@
   * [制作企业签章及签章证书](chapter1/zhi-zuo-qi-ye-qian-zhang-ji-qian-zhang-zheng-shu.md)
   * [获取应用ID和应用secret](chapter1/huo-qu-ying-yong-id-he-ying-yong-secret.md)
   * [制作并上传合同模板](chapter1/zhi-zuo-bing-shang-chuan-he-tong-mo-ban.md)
-  * [调用SDK](diao-yong-sdk.md)
 * [API使用说明](apishi-yong-shuo-ming.md)
   * [企业签章](qi-ye-qian-zhang.md)
   * [个人签字](ge-ren-qian-zi.md)
